@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SmartBagModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SmartBagEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Drivers" EntityType="SmartBagModel.Drivers" />
+    <EntitySet Name="TBT_USUARIO" EntityType="SmartBagModel.TBT_USUARIO" />
+  </EntityContainer>
+  <EntityType Name="Drivers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NAT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="OA" Type="Int32" />
+    <Property Name="CON" Type="Int32" />
+    <Property Name="TAL" Type="Int32" />
+    <Property Name="EXP" Type="Int32" />
+    <Property Name="AGG" Type="Int32" />
+    <Property Name="TEI" Type="Int32" />
+    <Property Name="STA" Type="Int32" />
+    <Property Name="CHA" Type="Int32" />
+    <Property Name="MOT" Type="Int32" />
+    <Property Name="REP" Type="Int32" />
+    <Property Name="AGE" Type="Int32" />
+    <Property Name="WEI" Type="Int32" />
+    <Property Name="RET" Type="Int32" />
+    <Property Name="SAL" Type="Int32" />
+    <Property Name="FEE" Type="Int32" />
+    <Property Name="OFF" Type="Int32" />
+    <Property Name="Last_updated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TBT_USUARIO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Login" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Senha" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Ativo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DtAlteracao" Type="DateTime" Precision="3" />
+    <Property Name="DtCadastro" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

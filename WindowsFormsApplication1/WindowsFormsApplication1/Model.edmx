@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="gameModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="gameModelStoreContainer">
+          <EntitySet Name="Drivers" EntityType="gameModel.Store.Drivers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TD" EntityType="gameModel.Store.TD" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Drivers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar(max)" />
+          <Property Name="NAT" Type="varchar(max)" />
+          <Property Name="OA" Type="int" />
+          <Property Name="CON" Type="int" />
+          <Property Name="TAL" Type="int" />
+          <Property Name="EXP" Type="int" />
+          <Property Name="AGG" Type="int" />
+          <Property Name="TEI" Type="int" />
+          <Property Name="STA" Type="int" />
+          <Property Name="CHA" Type="int" />
+          <Property Name="MOT" Type="int" />
+          <Property Name="REP" Type="int" />
+          <Property Name="AGE" Type="int" />
+          <Property Name="WEI" Type="int" />
+          <Property Name="RET" Type="int" />
+          <Property Name="SAL" Type="int" />
+          <Property Name="FEE" Type="int" />
+          <Property Name="OFF" Type="int" />
+          <Property Name="Last_updated" Type="datetime" />
+          <Property Name="Ativo" Type="bit" />
+        </EntityType>
+        <EntityType Name="TD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar(max)" />
+          <Property Name="NAT" Type="varchar(max)" />
+          <Property Name="OA" Type="int" />
+          <Property Name="LEA" Type="int" />
+          <Property Name="MEC" Type="int" />
+          <Property Name="ELE" Type="int" />
+          <Property Name="AER" Type="int" />
+          <Property Name="EXP" Type="int" />
+          <Property Name="PIT" Type="int" />
+          <Property Name="MOT" Type="int" />
+          <Property Name="AGE" Type="int" />
+          <Property Name="RET" Type="int" />
+          <Property Name="SAL" Type="int" />
+          <Property Name="FEE" Type="int" />
+          <Property Name="OFF" Type="int" />
+          <Property Name="Last_updated" Type="datetime" />
+          <Property Name="Ativo" Type="bit" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="gameModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Drivers" EntityType="gameModel.Drivers" />
+          <EntitySet Name="TD" EntityType="gameModel.TD" />
+        </EntityContainer>
+        <EntityType Name="Drivers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NAME" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NAT" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="OA" />
+          <Property Type="Int32" Name="CON" />
+          <Property Type="Int32" Name="TAL" />
+          <Property Type="Int32" Name="EXP" />
+          <Property Type="Int32" Name="AGG" />
+          <Property Type="Int32" Name="TEI" />
+          <Property Type="Int32" Name="STA" />
+          <Property Type="Int32" Name="CHA" />
+          <Property Type="Int32" Name="MOT" />
+          <Property Type="Int32" Name="REP" />
+          <Property Type="Int32" Name="AGE" />
+          <Property Type="Int32" Name="WEI" />
+          <Property Type="Int32" Name="RET" />
+          <Property Type="Int32" Name="SAL" />
+          <Property Type="Int32" Name="FEE" />
+          <Property Type="Int32" Name="OFF" />
+          <Property Type="DateTime" Name="Last_updated" />
+          <Property Type="Boolean" Name="Ativo" />
+        </EntityType>
+        <EntityType Name="TD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NAME" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NAT" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="OA" />
+          <Property Type="Int32" Name="LEA" />
+          <Property Type="Int32" Name="MEC" />
+          <Property Type="Int32" Name="ELE" />
+          <Property Type="Int32" Name="AER" />
+          <Property Type="Int32" Name="EXP" />
+          <Property Type="Int32" Name="PIT" />
+          <Property Type="Int32" Name="MOT" />
+          <Property Type="Int32" Name="AGE" />
+          <Property Type="Int32" Name="RET" />
+          <Property Type="Int32" Name="SAL" />
+          <Property Type="Int32" Name="FEE" />
+          <Property Type="Int32" Name="OFF" />
+          <Property Type="DateTime" Name="Last_updated" />
+          <Property Type="Boolean" Name="Ativo" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="gameModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Drivers">
+            <EntityTypeMapping TypeName="gameModel.Drivers">
+              <MappingFragment StoreEntitySet="Drivers">
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+                <ScalarProperty Name="Last_updated" ColumnName="Last_updated" />
+                <ScalarProperty Name="OFF" ColumnName="OFF" />
+                <ScalarProperty Name="FEE" ColumnName="FEE" />
+                <ScalarProperty Name="SAL" ColumnName="SAL" />
+                <ScalarProperty Name="RET" ColumnName="RET" />
+                <ScalarProperty Name="WEI" ColumnName="WEI" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="REP" ColumnName="REP" />
+                <ScalarProperty Name="MOT" ColumnName="MOT" />
+                <ScalarProperty Name="CHA" ColumnName="CHA" />
+                <ScalarProperty Name="STA" ColumnName="STA" />
+                <ScalarProperty Name="TEI" ColumnName="TEI" />
+                <ScalarProperty Name="AGG" ColumnName="AGG" />
+                <ScalarProperty Name="EXP" ColumnName="EXP" />
+                <ScalarProperty Name="TAL" ColumnName="TAL" />
+                <ScalarProperty Name="CON" ColumnName="CON" />
+                <ScalarProperty Name="OA" ColumnName="OA" />
+                <ScalarProperty Name="NAT" ColumnName="NAT" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TD">
+            <EntityTypeMapping TypeName="gameModel.TD">
+              <MappingFragment StoreEntitySet="TD">
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+                <ScalarProperty Name="Last_updated" ColumnName="Last_updated" />
+                <ScalarProperty Name="OFF" ColumnName="OFF" />
+                <ScalarProperty Name="FEE" ColumnName="FEE" />
+                <ScalarProperty Name="SAL" ColumnName="SAL" />
+                <ScalarProperty Name="RET" ColumnName="RET" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="MOT" ColumnName="MOT" />
+                <ScalarProperty Name="PIT" ColumnName="PIT" />
+                <ScalarProperty Name="EXP" ColumnName="EXP" />
+                <ScalarProperty Name="AER" ColumnName="AER" />
+                <ScalarProperty Name="ELE" ColumnName="ELE" />
+                <ScalarProperty Name="MEC" ColumnName="MEC" />
+                <ScalarProperty Name="LEA" ColumnName="LEA" />
+                <ScalarProperty Name="OA" ColumnName="OA" />
+                <ScalarProperty Name="NAT" ColumnName="NAT" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model" ZoomLevel="75">
+        <EntityTypeShape EntityType="gameModel.Drivers" Width="1.5" PointX="0.75" PointY="0.75" Height="5.057109375" />
+        <EntityTypeShape EntityType="gameModel.TD" Width="1.5" PointX="3.375" PointY="0.75" Height="4.480205078125" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

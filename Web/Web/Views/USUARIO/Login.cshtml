@@ -1,0 +1,75 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Login";
+}
+<head>
+    <link rel="icon" href="@Url.Content("~/Content/Imagens/pp.jpg")" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoS</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</head>
+<div style="margin-left: 38%;margin-top: 10%;">
+    <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="login-body">
+            
+            <br />
+            @using (Html.BeginForm("Autenticar", "USUARIO", new { @class = "login-form" }))
+            {
+                @Html.ValidationSummary(true)
+            <div style="padding-left: 30px;"><img src="~/Content/Imagens/pp.jpg" /></div>
+                <div class="form-group group">
+                    <label for="log-email">Username</label>
+                    @Html.TextBox("txtLogin", "", new { @class = "form-control", @placeholder = "Insert your Username", required = "required" })
+
+                </div>
+                <div class="form-group group">
+                    @Html.Label("Password", new { @class = "log-password" })
+                    @Html.Password("txtPassword", "", new { @class = "form-control", name = "log-password", id = "log-password", placeholder = "Insert your Password", required = "required" })
+
+                    <br />
+                    @*@Html.ActionLink("I forgot my password", "MudancaSenha", new { @class = "help-link" })*@
+
+                </div>
+                <div>
+                    <input type="submit" value="Sign me in" class="btn btn-primary btn-sm" />
+                    <br /><br />
+                    @*<div>@Html.ActionLink("Register a new membership", "Cadastro", new { @class = "help-link" })</div>*@
+                </div>
+                <br />
+
+                }
+</div>
+        <a data-toggle="modal" href="#error" id="openModal"></a>
+
+
+        @if (TempData["error"] != null)
+        {
+
+            <div class="modal fade  modal-danger" id="error" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                            <h4 class="modal-title">Error</h4>
+                        </div>
+                        <div class="modal-body">
+                            @Html.Label(TempData["error"].ToString())
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            
+            <script>
+                $(document).ready(function () {
+                    $("#openModal").trigger("click");
+                });
+            </script>
+        }
+    </div>
+</div>
+

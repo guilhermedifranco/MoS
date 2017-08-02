@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title SmartBag</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="skin-black fixed">
+    @if (!string.IsNullOrEmpty(Web.Utils.SessionED.Current.LoginUsuario))
+    {
+        <header class="header">
+            <a href="~/Home/Inicio" class="logo">
+                <img src="~/Content/Imagens/logo.png" height="60px" />
+            </a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-bottom: 9px;">
+                                <i class="glyphicon glyphicon-user"></i>
+                                <span>@Html.Label(Web.Utils.SessionED.Current.LoginUsuario) <i class="caret"></i></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-header bg-light-blue">
+                                    <p>
+                                        <small>
+                                            Member since
+                                        </small>
+                                            @Html.Label(Web.Utils.SessionED.Current.DataCriacao)   
+                                    </p>
+                                </li>
+                                <li class="user-footer">
+                                    <div class="pull-right">
+                                        <a href="~/USUARIO/Login" class="btn btn-default btn-flat">Exit</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+
+        if (Web.Utils.SessionED.Current.Perfil == "1")
+        {
+            <div class="wrapper row-offcanvas row-offcanvas-left">
+                <aside class="left-side sidebar-offcanvas">
+                    <section class="sidebar">
+                        <div class="user-panel">
+
+                            <div class="pull-left info">
+                                <p>Hello, @Web.Utils.SessionED.Current.LoginUsuario</p>
+                                @*<a href="#"><i class="fa fa-circle text-success"></i> Online</a>*@
+                            </div>
+                        </div>
+                        <ul class="sidebar-menu">
+                            <li class="treeview">
+                                <a>
+                                    <i class="fa fa-upload"></i>
+                                    <span>Driver</span>
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="~/Driver/Index"><i class="fa fa-angle-double-right"></i> Search</a></li>
+                                    <li><a href="~/Driver/Find"><i class="fa fa-angle-double-right"></i> Find</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        @*<ul class="sidebar-menu">
+                            <li class="treeview">
+                                <a>
+                                    <i class="fa fa-upload"></i>
+                                    <span>Usuários</span>
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="~/USUARIO/Index"><i class="fa fa-angle-double-right"></i> Pesquisa</a></li>
+                                    <li><a href="~/USUARIO/Create"><i class="fa fa-angle-double-right"></i> Novo</a></li>
+                                </ul>
+                            </li>
+                        </ul>*@
+
+                    </section>
+                    <!-- /.sidebar -->
+                </aside>
+                <aside class="right-side">
+                    <div class="container body-content">
+                        @RenderBody()
+                        <hr />
+                        @* <footer>
+                                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                            </footer>*@
+                    </div>
+                </aside>
+            </div><!-- ./wrapper -->
+        }
+    }
+    else
+    {
+        Response.Redirect("~/USUARIO/Login");
+    }
+    @RenderSection("scripts", required: false)
+</body>
+</html>

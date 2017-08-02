@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="gameModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Drivers">
+      <EntityTypeMapping TypeName="gameModel.Drivers">
+        <MappingFragment StoreEntitySet="Drivers">
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="Last_updated" ColumnName="Last_updated" />
+          <ScalarProperty Name="OFF" ColumnName="OFF" />
+          <ScalarProperty Name="FEE" ColumnName="FEE" />
+          <ScalarProperty Name="SAL" ColumnName="SAL" />
+          <ScalarProperty Name="RET" ColumnName="RET" />
+          <ScalarProperty Name="WEI" ColumnName="WEI" />
+          <ScalarProperty Name="AGE" ColumnName="AGE" />
+          <ScalarProperty Name="REP" ColumnName="REP" />
+          <ScalarProperty Name="MOT" ColumnName="MOT" />
+          <ScalarProperty Name="CHA" ColumnName="CHA" />
+          <ScalarProperty Name="STA" ColumnName="STA" />
+          <ScalarProperty Name="TEI" ColumnName="TEI" />
+          <ScalarProperty Name="AGG" ColumnName="AGG" />
+          <ScalarProperty Name="EXP" ColumnName="EXP" />
+          <ScalarProperty Name="TAL" ColumnName="TAL" />
+          <ScalarProperty Name="CON" ColumnName="CON" />
+          <ScalarProperty Name="OA" ColumnName="OA" />
+          <ScalarProperty Name="NAT" ColumnName="NAT" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TD">
+      <EntityTypeMapping TypeName="gameModel.TD">
+        <MappingFragment StoreEntitySet="TD">
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="Last_updated" ColumnName="Last_updated" />
+          <ScalarProperty Name="OFF" ColumnName="OFF" />
+          <ScalarProperty Name="FEE" ColumnName="FEE" />
+          <ScalarProperty Name="SAL" ColumnName="SAL" />
+          <ScalarProperty Name="RET" ColumnName="RET" />
+          <ScalarProperty Name="AGE" ColumnName="AGE" />
+          <ScalarProperty Name="MOT" ColumnName="MOT" />
+          <ScalarProperty Name="PIT" ColumnName="PIT" />
+          <ScalarProperty Name="EXP" ColumnName="EXP" />
+          <ScalarProperty Name="AER" ColumnName="AER" />
+          <ScalarProperty Name="ELE" ColumnName="ELE" />
+          <ScalarProperty Name="MEC" ColumnName="MEC" />
+          <ScalarProperty Name="LEA" ColumnName="LEA" />
+          <ScalarProperty Name="OA" ColumnName="OA" />
+          <ScalarProperty Name="NAT" ColumnName="NAT" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,45 @@
+﻿@using System.Web.Mvc;
+@using System.Text;
+@functions {
+
+    public static string GetMeasureValue(Dictionary<Tuple<decimal, decimal>, string> im, decimal measureCode, decimal SizeCode)
+    {
+        string StdMeas = "";
+        if (im != null)
+        {
+            im.TryGetValue(new Tuple<decimal, decimal>(measureCode, SizeCode), out StdMeas);
+        }
+
+        return StdMeas;
+    }
+
+    public static bool IsIdUsed(List<decimal> lista, decimal id)
+    {
+        var used = (from ii in lista where ii.Equals(id) select 1).Count();
+        if (used == null || used == 0)
+            return false;
+        else
+            return true;
+        
+    }
+
+    public static string Chop(string s, int length)
+    {
+        if (s.Length > length)
+        {
+            s = s.Substring(0, length)+"...";
+        }
+
+        return s;
+    }
+
+    public static string Status(bool bl)
+    {
+        if (bl)
+        {
+            return "Ativo";
+        }
+        else
+            return "Inativo";
+    }
+}

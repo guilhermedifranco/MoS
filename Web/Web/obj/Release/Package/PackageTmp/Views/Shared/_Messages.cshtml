@@ -1,0 +1,17 @@
+﻿@if (!string.IsNullOrEmpty(ViewData["errovalidation"].ToString()))
+{
+    <div class="row">
+        <img src="~/Content/Imagens/warning-3-256.png" style="float:left; height: 30px; width: auto; margin-top: -7px;" />
+        @Html.Label(ViewData["errovalidation"].ToString().Replace("[", "").Replace("]", ""),
+                                    new { @style = "color: red; font-weight: bold; font-size: 15px" })
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(ViewData["sucessovalidation"].ToString()))
+{
+    <div class="row">
+        <img src="~/Content/Imagens/Success-icon-512.png" style="float:left; height: 30px; width: auto; margin-top: -7px;" />
+        @Html.Label(ViewData["sucessovalidation"].ToString().Replace("[", "").Replace("]", ""),
+                                    new { @style = "color: lightseagreen; font-weight: bold; font-size: 15px" })
+    </div>
+}

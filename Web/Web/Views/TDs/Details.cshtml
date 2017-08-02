@@ -1,0 +1,154 @@
+﻿@model Web.Models.TD
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TD</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LEA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LEA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MEC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MEC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ELE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ELE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EXP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EXP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AGE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RET)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RET)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FEE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FEE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OFF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OFF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Last_updated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Last_updated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ativo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

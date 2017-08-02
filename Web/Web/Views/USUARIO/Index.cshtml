@@ -1,0 +1,131 @@
+﻿@model  List<Web.Messages.Usuario>
+@using PagedList.Mvc;
+
+    <!-- header logo: style can be found in header.less -->
+    <div class="wrapper row-offcanvas row-offcanvas-left" style="margin-left: 15px; margin-top: -50px">
+
+        <!-- Right side column. Contains the navbar and content of the page -->
+        <aside class="right-side">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Pesquisar Usuários
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="~/Home/Inicio"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">Usuário</li>
+                    <li class="active">Pesquisa</li>
+                </ol>
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- /.box --><!-- /.box -->
+                    </div><!-- /.col -->
+                    <div class="col-md-6">
+                        <!-- /.box --><!-- /.box -->
+                    </div><!-- /.col -->
+                </div>
+
+                @htmlHelpers.HelperConfirmation(TempData["Usuario"], TempData["Message"])
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <h3 class="box-title">
+                                    <img id="Right" onclick="showHide('menu'); return false;" src="~/Content/Imagens/RightArrow.png" />
+                                    <img id="Down" onclick="showHide('menu'); return false;" src="~/Content/Imagens/DownArrow.png" style="display: none" />
+                                    Filtros
+                                </h3>
+                                <div class="box-tools">
+                                    <div style="float: right;">
+                                        <form action="~/USUARIO/Create"><button type="submit" class="btn btn-primary">Novo</button></form>
+                                    </div>
+                                </div>
+                                <div class="box-tools"></div>
+                            </div><!-- /.box-header -->
+                            @using (Ajax.BeginForm("Pesquisa", "USUARIO", new AjaxOptions
+                            {
+                                HttpMethod = "GET",
+                                InsertionMode = InsertionMode.Replace,
+                                UpdateTargetId = "_PartialUserSearch"
+
+                            }))
+                            {
+                                <div class="row" id="menu" style="display: none;">
+                                    <!-- accepted payments column -->
+                                    <div class="col-xs-6">
+                                        <div role="form">
+                                            <div class="box-body">
+
+                                                <div class="form-group">
+                                                    <label>Pessoa</label>
+                                                    @Html.TextBox("TxtNomePessoa", "", htmlAttributes: new { @class = "form-control" })
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Status:</label>
+                                                    @Html.DropDownList("Status", null, "--Select a Status--", htmlAttributes: new { @class = "form-control" })
+                                                </div>
+                                                <div class="form-group">
+                                                    <button class="btn btn-primary" id="pesquisar" onclick="showHide('menu');">Search</button>
+                                                </div>
+                                            </div><!-- /.box-body -->
+                                        </div>
+                                    </div><!-- /.col -->
+
+                                    <div class="col-xs-6">
+                                        <div role="form">
+                                            <div class="box-body">
+
+                                                <div class="form-group">
+                                                    <label>Login</label>
+                                                    @Html.TextBox("TxtLogin", "", htmlAttributes: new { @class = "form-control" })
+                                                </div>
+                                            </div><!-- /.box-body -->
+                                        </div>
+                                    </div><!-- /.col -->
+                                </div><!-- /.row -->
+                            }
+                        </div><!-- /.Fim dos Filtros<-->
+                    </div>
+                </div>
+                <div id="_PartialUserSearch">
+                    @Html.Partial("_PartialUserSearch", Model)
+                </div>
+            </section><!-- /.content -->
+        </aside><!-- /.right-side -->
+    </div><!-- ./wrapper -->
+
+    @section scripts
+{
+
+        
+        <!-- Show/Hide Filter -->
+        <script type="text/javascript">
+            function showHide(obj) {
+                var div = document.getElementById(obj);
+                if (div.style.display == 'none') {
+                    div.style.display = '';
+                    document.getElementById('Down').style.display = '';
+                    document.getElementById('Right').style.display = 'none';
+                }
+                else {
+                    div.style.display = 'none';
+                    document.getElementById('Down').style.display = 'none';
+                    document.getElementById('Right').style.display = '';
+                }
+            }
+        </script>
+
+
+        <script>
+            $(document).ready(function () {
+                $("#TxtCodPessoa").attr('maxlength', '30');
+                $("#TxtLogin").attr('maxlength', '40');
+            });
+        </script>
+    }

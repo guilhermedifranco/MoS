@@ -1,0 +1,129 @@
+﻿@model IEnumerable<Web.Models.TD>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LEA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MEC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ELE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EXP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FEE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OFF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Last_updated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LEA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MEC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ELE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PIT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AGE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RET)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FEE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OFF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Last_updated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ativo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,143 @@
+﻿@helper HelperCssSituation(decimal pCode, string pSituation) {
+    string span = "";
+    int code = Convert.ToInt32(pCode);
+    switch (code)
+    {
+
+        case 1: //Closed
+            span = "label label-grey";
+            break;
+        case 2: //New
+            span = "label label-info";
+            break;
+        case 3: //Scheduled
+            span = "label label-primary";
+            break;
+        case 4: //Started
+            span = "label label-success";
+            break;
+        case 5: //Cancelled
+            span = "label label-danger";
+            break;
+        case 7: //Revision
+            span = "label label-warning";
+            break;
+        case 8:
+            span = "label label-default";
+            break;
+    }
+
+    <span class="@span">  @pSituation    </span>
+
+}
+
+@helper HelperConfirmation(object tempData, object message = null)
+{
+    string style = "display: none";
+    string classe = "";
+    string IconClasse = "";
+    string text = "Data Saved Successfully";
+    if (tempData != null)
+    {
+        string value = tempData.ToString();
+        if (!string.IsNullOrEmpty(value))
+        {
+            if (value.Equals("Success"))
+            {
+                style = "";
+                classe = "alert alert-success alert-dismissable";
+                IconClasse = "fa fa-check";
+                if (message != null && !String.IsNullOrEmpty(message.ToString()))
+                {
+                    text = message.ToString();
+                }
+            }
+            else if (value.Equals("Failure"))
+            {
+                style = "";
+                classe = "alert alert-danger alert-dismissable";
+                IconClasse = "fa fa-ban";
+                if (message == null)
+                {
+                    text = "An Error Ocurred";
+                }
+                else
+                {
+                    text = message.ToString();
+                }
+                
+            }
+            else if (value.Equals("Warning"))
+            {
+                style = "";
+                classe = "alert alert-warning alert-dismissable";
+                IconClasse = "fa fa-warning";
+                if (message == null)
+                {
+                    text = "Warning! This action may affect other parts of the system.";
+                }
+                else
+                {
+                    text = message.ToString();
+                }
+
+            }
+        }
+        
+    }
+
+    <div class="@classe" style="@style">
+        <i class="@IconClasse"></i>
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        @text
+    </div>
+
+}
+
+@helper HelperContactInspector(decimal situation, string InspectorName)
+{
+    string write = "";
+    string divClass = "";
+
+    if (situation != 2)
+    {
+        divClass = "callout callout-danger";
+        write = "Please, contact the inspector " + InspectorName + " to ensure that this inspection is not yet started.";
+    }
+    else
+    {
+        divClass = "hide";
+    }
+    
+    <div class="@divClass"><b>WARNING:</b> <br> @write</div>    
+}
+
+@helper CheckedIfTrue(bool selected)
+{
+    string check = "";
+    if (selected)
+    {
+        check = "checked";
+    }
+    @check
+}
+
+@helper isReadOnly(int  count, bool selected)
+{
+    string read = "";
+    if (count > 0 && selected)
+    {
+        read = "readonly";
+    }
+    @read
+}
+
+@helper CheckConfirm(int count)
+{
+    string att = "action=submit";
+    if (count > 0)
+    {
+        att = "data-toggle=modal href=#confirmationModal";
+    }
+    <button class="btn btn-default" type="button" @att>Save</button>
+}

@@ -1,0 +1,105 @@
+﻿@model  List<Web.Models.Drivers>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- /.row -->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3 class="box-title">Drivers Search</h3>
+                    </div>
+                    <div class="box-tools"></div>
+                    <div class="col-md-3 navbar-right text-right results_Found">
+                        @Model.Count resultados encontrados
+                    </div>
+
+                </div>
+            </div>
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <tr>
+                        <th>NAME</th>
+                        <th>NAT</th>
+                        <th>OA</th>
+                        <th>CON</th>
+                        <th>TAL</th>
+                        <th>EXP</th>
+                        <th>AGG</th>
+                        <th>TEI</th>
+                        <th>STA</th>
+                        <th>CHA</th>
+                        <th>MOT</th>
+                        <th>REP</th>
+                        <th>AGE</th>
+                        <th>WEI</th>
+                        <th>SAL</th>
+                        <th>FEE</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>
+                                @Functions.Chop(@Html.DisplayFor(modelItem => item.NAME).ToString(), 20)
+                            </td>                            
+                            <td>
+                                @Functions.Chop(@Html.DisplayFor(modelItem => item.NAT).ToString(), 20)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CON)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TAL)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EXP)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AGG)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TEI)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.STA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CHA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MOT)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.REP)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AGE)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.WEI)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SAL)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FEE)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div>
+</div>
+

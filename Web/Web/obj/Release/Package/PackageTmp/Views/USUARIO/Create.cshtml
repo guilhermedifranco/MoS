@@ -1,0 +1,87 @@
+﻿@model Web.Messages.Usuario
+
+<div class="wrapper row-offcanvas row-offcanvas-left" style="margin-left: 15px; margin-top: -50px">
+    <!-- Right side column. Contains the navbar and content of the page -->
+    <aside class="right-side">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Criar Usuário
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Usuário</li>
+                <li class="active">Criar</li>
+            </ol>
+        </section>
+        @htmlHelpers.HelperConfirmation(TempData["Usuario"], TempData["Message"])
+        @using (Html.BeginForm("Create", "USUARIO", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+           
+            <section class="content">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <!-- general form elements -->
+                        <div class="box box-primary">
+                            <!-- form start -->
+                            <div class="box-body">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    <label>Pessoa</label>
+                                    @Html.DropDownList("codPessoa", null, "--Selecione uma Pessoa--", htmlAttributes: new { @class = "form-control", id = "codPessoa", required = "required" })
+                                </div>
+                                <div class="form-group">
+                                    <label>Login</label>
+                                    @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control", id = "txtLogin", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary" id="btnSalvar">Salvar</button>
+                                </div>
+                            </div><!-- /.box-body -->
+                        </div>
+                    </div><!-- /.box -->
+                    <div class="col-md-6">
+                        <!-- general form elements -->
+                        <div class="box box-primary">
+                            <!-- form start -->
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label>Senha</label>
+                                    @Html.PasswordFor(model => model.Senha, new { @class = "form-control", id = "txtSenha", required = "required" })
+                                    @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <label>Confirmar Senha</label>
+                                    @Html.Password("ConfirmaSenha", null, new { @class = "form-control", id = "txtConfirmaSenha", required = "required" })
+                                </div>
+                            </div><!-- /.box-body -->
+                        </div>
+                    </div><!-- /.box -->
+                </div><!--/.col (left) -->
+                <!-- right column --><!--/.col (right) -->
+                <!-- /.row -->
+            </section><!-- /.content -->
+        }
+    </aside><!-- /.right-side -->
+</div><!-- ./wrapper -->
+@section scripts
+{
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#txtLogin").attr('maxlength', '40');
+            $("#txtSenha").attr('maxlength', '20');
+        });
+
+        $("#btnSalvar").click(function () {
+            if ($("#txtSenha").val() != $("#txtConfirmaSenha").val()) {
+                $("#txtSenha").after('<span class="text-danger">Senhas não são iguais.</span>');
+            }
+        });
+    </script>
+}   

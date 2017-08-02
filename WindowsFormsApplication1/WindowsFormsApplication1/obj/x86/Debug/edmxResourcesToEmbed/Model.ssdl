@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="gameModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="gameModelStoreContainer">
+    <EntitySet Name="Drivers" EntityType="gameModel.Store.Drivers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TD" EntityType="gameModel.Store.TD" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Drivers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NAME" Type="varchar(max)" />
+    <Property Name="NAT" Type="varchar(max)" />
+    <Property Name="OA" Type="int" />
+    <Property Name="CON" Type="int" />
+    <Property Name="TAL" Type="int" />
+    <Property Name="EXP" Type="int" />
+    <Property Name="AGG" Type="int" />
+    <Property Name="TEI" Type="int" />
+    <Property Name="STA" Type="int" />
+    <Property Name="CHA" Type="int" />
+    <Property Name="MOT" Type="int" />
+    <Property Name="REP" Type="int" />
+    <Property Name="AGE" Type="int" />
+    <Property Name="WEI" Type="int" />
+    <Property Name="RET" Type="int" />
+    <Property Name="SAL" Type="int" />
+    <Property Name="FEE" Type="int" />
+    <Property Name="OFF" Type="int" />
+    <Property Name="Last_updated" Type="datetime" />
+    <Property Name="Ativo" Type="bit" />
+  </EntityType>
+  <EntityType Name="TD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NAME" Type="varchar(max)" />
+    <Property Name="NAT" Type="varchar(max)" />
+    <Property Name="OA" Type="int" />
+    <Property Name="LEA" Type="int" />
+    <Property Name="MEC" Type="int" />
+    <Property Name="ELE" Type="int" />
+    <Property Name="AER" Type="int" />
+    <Property Name="EXP" Type="int" />
+    <Property Name="PIT" Type="int" />
+    <Property Name="MOT" Type="int" />
+    <Property Name="AGE" Type="int" />
+    <Property Name="RET" Type="int" />
+    <Property Name="SAL" Type="int" />
+    <Property Name="FEE" Type="int" />
+    <Property Name="OFF" Type="int" />
+    <Property Name="Last_updated" Type="datetime" />
+    <Property Name="Ativo" Type="bit" />
+  </EntityType>
+</Schema>

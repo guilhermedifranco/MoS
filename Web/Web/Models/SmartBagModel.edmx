@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SmartBagModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Drivers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar(max)" />
+          <Property Name="NAT" Type="varchar(max)" />
+          <Property Name="OA" Type="int" />
+          <Property Name="CON" Type="int" />
+          <Property Name="TAL" Type="int" />
+          <Property Name="EXP" Type="int" />
+          <Property Name="AGG" Type="int" />
+          <Property Name="TEI" Type="int" />
+          <Property Name="STA" Type="int" />
+          <Property Name="CHA" Type="int" />
+          <Property Name="MOT" Type="int" />
+          <Property Name="REP" Type="int" />
+          <Property Name="AGE" Type="int" />
+          <Property Name="WEI" Type="int" />
+          <Property Name="RET" Type="int" />
+          <Property Name="SAL" Type="int" />
+          <Property Name="FEE" Type="int" />
+          <Property Name="OFF" Type="int" />
+          <Property Name="Last_updated" Type="datetime" />
+          <Property Name="Ativo" Type="bit" />
+        </EntityType>
+        <EntityType Name="TBT_USUARIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="40" />
+          <Property Name="Login" Type="varchar" MaxLength="40" />
+          <Property Name="Senha" Type="varchar" MaxLength="20" />
+          <Property Name="Ativo" Type="varchar" MaxLength="1" />
+          <Property Name="DtAlteracao" Type="datetime" />
+          <Property Name="DtCadastro" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar(max)" />
+          <Property Name="NAT" Type="varchar(max)" />
+          <Property Name="OA" Type="int" />
+          <Property Name="LEA" Type="int" />
+          <Property Name="MEC" Type="int" />
+          <Property Name="ELE" Type="int" />
+          <Property Name="AER" Type="int" />
+          <Property Name="EXP" Type="int" />
+          <Property Name="PIT" Type="int" />
+          <Property Name="MOT" Type="int" />
+          <Property Name="AGE" Type="int" />
+          <Property Name="RET" Type="int" />
+          <Property Name="SAL" Type="int" />
+          <Property Name="FEE" Type="int" />
+          <Property Name="OFF" Type="int" />
+          <Property Name="Last_updated" Type="datetime" />
+          <Property Name="Ativo" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="SmartBagModelStoreContainer">
+          <EntitySet Name="Drivers" EntityType="Self.Drivers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBT_USUARIO" EntityType="Self.TBT_USUARIO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TD" EntityType="Self.TD" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SmartBagModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SmartBagEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBT_USUARIO" EntityType="SmartBagModel.TBT_USUARIO" />
+          <EntitySet Name="Drivers" EntityType="SmartBagModel.Drivers" />
+          <EntitySet Name="TD" EntityType="SmartBagModel.TD" />
+        </EntityContainer>
+        <EntityType Name="TBT_USUARIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Login" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Senha" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Ativo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DtAlteracao" Type="DateTime" Precision="3" />
+          <Property Name="DtCadastro" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Drivers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NAT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OA" Type="Int32" />
+          <Property Name="CON" Type="Int32" />
+          <Property Name="TAL" Type="Int32" />
+          <Property Name="EXP" Type="Int32" />
+          <Property Name="AGG" Type="Int32" />
+          <Property Name="TEI" Type="Int32" />
+          <Property Name="STA" Type="Int32" />
+          <Property Name="CHA" Type="Int32" />
+          <Property Name="MOT" Type="Int32" />
+          <Property Name="REP" Type="Int32" />
+          <Property Name="AGE" Type="Int32" />
+          <Property Name="WEI" Type="Int32" />
+          <Property Name="RET" Type="Int32" />
+          <Property Name="SAL" Type="Int32" />
+          <Property Name="FEE" Type="Int32" />
+          <Property Name="OFF" Type="Int32" />
+          <Property Name="Last_updated" Type="DateTime" Precision="3" />
+          <Property Name="Ativo" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NAT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OA" Type="Int32" />
+          <Property Name="LEA" Type="Int32" />
+          <Property Name="MEC" Type="Int32" />
+          <Property Name="ELE" Type="Int32" />
+          <Property Name="AER" Type="Int32" />
+          <Property Name="EXP" Type="Int32" />
+          <Property Name="PIT" Type="Int32" />
+          <Property Name="MOT" Type="Int32" />
+          <Property Name="AGE" Type="Int32" />
+          <Property Name="RET" Type="Int32" />
+          <Property Name="SAL" Type="Int32" />
+          <Property Name="FEE" Type="Int32" />
+          <Property Name="OFF" Type="Int32" />
+          <Property Name="Last_updated" Type="DateTime" Precision="3" />
+          <Property Name="Ativo" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SmartBagModelStoreContainer" CdmEntityContainer="SmartBagEntities">
+          <EntitySetMapping Name="TBT_USUARIO">
+            <EntityTypeMapping TypeName="SmartBagModel.TBT_USUARIO">
+              <MappingFragment StoreEntitySet="TBT_USUARIO">
+                <ScalarProperty Name="DtCadastro" ColumnName="DtCadastro" />
+                <ScalarProperty Name="DtAlteracao" ColumnName="DtAlteracao" />
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drivers">
+            <EntityTypeMapping TypeName="SmartBagModel.Drivers">
+              <MappingFragment StoreEntitySet="Drivers">
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+                <ScalarProperty Name="Last_updated" ColumnName="Last_updated" />
+                <ScalarProperty Name="OFF" ColumnName="OFF" />
+                <ScalarProperty Name="FEE" ColumnName="FEE" />
+                <ScalarProperty Name="SAL" ColumnName="SAL" />
+                <ScalarProperty Name="RET" ColumnName="RET" />
+                <ScalarProperty Name="WEI" ColumnName="WEI" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="REP" ColumnName="REP" />
+                <ScalarProperty Name="MOT" ColumnName="MOT" />
+                <ScalarProperty Name="CHA" ColumnName="CHA" />
+                <ScalarProperty Name="STA" ColumnName="STA" />
+                <ScalarProperty Name="TEI" ColumnName="TEI" />
+                <ScalarProperty Name="AGG" ColumnName="AGG" />
+                <ScalarProperty Name="EXP" ColumnName="EXP" />
+                <ScalarProperty Name="TAL" ColumnName="TAL" />
+                <ScalarProperty Name="CON" ColumnName="CON" />
+                <ScalarProperty Name="OA" ColumnName="OA" />
+                <ScalarProperty Name="NAT" ColumnName="NAT" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TD">
+            <EntityTypeMapping TypeName="SmartBagModel.TD">
+              <MappingFragment StoreEntitySet="TD">
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+                <ScalarProperty Name="Last_updated" ColumnName="Last_updated" />
+                <ScalarProperty Name="OFF" ColumnName="OFF" />
+                <ScalarProperty Name="FEE" ColumnName="FEE" />
+                <ScalarProperty Name="SAL" ColumnName="SAL" />
+                <ScalarProperty Name="RET" ColumnName="RET" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="MOT" ColumnName="MOT" />
+                <ScalarProperty Name="PIT" ColumnName="PIT" />
+                <ScalarProperty Name="EXP" ColumnName="EXP" />
+                <ScalarProperty Name="AER" ColumnName="AER" />
+                <ScalarProperty Name="ELE" ColumnName="ELE" />
+                <ScalarProperty Name="MEC" ColumnName="MEC" />
+                <ScalarProperty Name="LEA" ColumnName="LEA" />
+                <ScalarProperty Name="OA" ColumnName="OA" />
+                <ScalarProperty Name="NAT" ColumnName="NAT" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

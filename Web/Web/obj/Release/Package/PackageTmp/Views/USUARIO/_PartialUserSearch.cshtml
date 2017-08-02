@@ -1,0 +1,53 @@
+﻿@model  List<Web.Messages.Usuario>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- /.row -->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3 class="box-title">Pesquisa Usuários</h3>
+                    </div>
+                    <div class="box-tools"></div>
+                    <div class="col-md-3 navbar-right text-right results_Found">
+                        @Model.Count resultados encontrados
+                    </div>
+
+                </div>
+            </div>
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <tr>
+                        <th>Pessoa</th>
+                        <th>Login</th>
+                        <th>Status</th>
+                        <th>Edit</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NomePessoa)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Login)
+                            </td>
+                            <td>
+                                @Functions.Status(item.Ativo)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.CodUsuario })
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div>
+</div>
+

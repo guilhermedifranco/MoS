@@ -1,0 +1,45 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+textarea {
+    max-width: 600px;
+}
+
+.pdf_icon {
+      background-image: url('Imagens/pdf_icon.png');
+      -webkit-background-size: 25px 25px;
+      background-size: 20px 20px;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+  }
+
+.results_Found {
+    height: 42px; 
+    padding-right: 20px; 
+    position: relative;
+    top: 10px;
+}

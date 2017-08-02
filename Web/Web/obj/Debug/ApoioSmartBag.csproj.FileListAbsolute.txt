@@ -1,0 +1,74 @@
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\Web.dll.config
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\Web.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\Web.pdb
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\Antlr3.Runtime.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\EntityFramework.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\EntityFramework.SqlServer.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\Excel.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\ICSharpCode.SharpZipLib.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\Newtonsoft.Json.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\PagedList.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\PagedList.Mvc.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\System.Web.Helpers.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\System.Web.Mvc.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\System.Web.Optimization.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\System.Web.Razor.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\System.Web.WebPages.Deployment.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\System.Web.WebPages.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\System.Web.WebPages.Razor.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\WebGrease.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\EntityFramework.xml
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\EntityFramework.SqlServer.xml
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\Excel.pdb
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\PagedList.xml
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\PagedList.Mvc.xml
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\System.Web.Helpers.xml
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\System.Web.Mvc.xml
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\System.Web.Optimization.xml
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\System.Web.Razor.xml
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\System.Web.WebPages.xml
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\System.Web.WebPages.Deployment.xml
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\System.Web.WebPages.Razor.xml
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\Antlr3.Runtime.pdb
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\bin\Newtonsoft.Json.xml
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\obj\Debug\ApoioSmartBag.csprojResolveAssemblyReference.cache
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\obj\Debug\Web.dll
+C:\Projetos\SmartBagWindows\ApoioSmartBag\Web\Web\obj\Debug\Web.pdb
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\Web.dll.config
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\Web.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\Web.pdb
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\Antlr3.Runtime.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\EntityFramework.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\Excel.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\Newtonsoft.Json.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\PagedList.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\PagedList.Mvc.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\System.Web.Helpers.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\System.Web.Mvc.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\System.Web.Optimization.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\System.Web.Razor.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\System.Web.WebPages.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\WebGrease.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\EntityFramework.xml
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\EntityFramework.SqlServer.xml
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\Excel.pdb
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\PagedList.xml
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\PagedList.Mvc.xml
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\System.Web.Helpers.xml
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\System.Web.Mvc.xml
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\System.Web.Optimization.xml
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\System.Web.Razor.xml
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\System.Web.WebPages.xml
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\Antlr3.Runtime.pdb
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\bin\Newtonsoft.Json.xml
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\obj\Debug\Web.dll
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\obj\Debug\Web.pdb
+C:\Users\Guilherme Nunes\Documents\MoS\Web\Web\obj\Debug\ApoioSmartBag.csprojResolveAssemblyReference.cache
