@@ -12,6 +12,8 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.IO.Compression;
 using System.Globalization;
+using System.Collections.Specialized;
+using System.Web;
 
 namespace WindowsFormsApplication1
 {
@@ -21,12 +23,19 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-
+        WebBrowser wb = new WebBrowser();
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
+        public void Navigate(string url)
+        {
+            wb.Navigate(url);
+            while (wb.ReadyState != WebBrowserReadyState.Complete)
+            {
+                Application.DoEvents();
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             using (var client = new WebClient())
@@ -74,49 +83,49 @@ namespace WindowsFormsApplication1
             bool add = false;
 
             //JToken jUser = o1["base"];
-            
+
             JArray array = (JArray)o1["drivers"];
             foreach (var jUser in array)
             {
                 using (Entities db = new Entities())
                 {
                     int id = (int)jUser["ID"];
-                   var d= db.Drivers.AsQueryable().Where(x => x.ID == id).FirstOrDefault();
-                
-               // Drivers d = new Drivers();
+                    var d = db.Drivers.AsQueryable().Where(x => x.ID == id).FirstOrDefault();
 
-                   if ((d) == null)
-                   {
-                       d = new Drivers();
-                       d.ID = id;
-                       add = true;
-                   }
+                    // Drivers d = new Drivers();
 
-                d.NAME = (string)jUser["NAME"];
-                d.NAT = (string)jUser["NAT"];
-                d.OA = (int)jUser["OA"];
-                d.CON = (int)jUser["CON"];
-                d.TAL = (int)jUser["TAL"];
-                d.EXP = (int)jUser["EXP"];
-                d.AGG = (int)jUser["AGG"];
-                d.TEI = (int)jUser["TEI"];
-                d.STA = (int)jUser["STA"];
-                d.CHA = (int)jUser["CHA"];
-                d.MOT = (int)jUser["MOT"];
-                d.REP = (int)jUser["REP"];
-                d.AGE = (int)jUser["AGE"];
-                d.WEI = (int)jUser["WEI"];
-                d.RET = (int)jUser["RET"];
-                d.SAL = (int)jUser["SAL"];
-                d.FEE = (int)jUser["FEE"];
-                d.OFF = (int)jUser["OFF"];
-                d.Last_updated = (DateTime)o1["Last updated"];
-                d.Ativo = true;
-                if (add)
-                {
-                    db.Drivers.AddObject(d);
-                    add = false;
-                }
+                    if ((d) == null)
+                    {
+                        d = new Drivers();
+                        d.ID = id;
+                        add = true;
+                    }
+
+                    d.NAME = (string)jUser["NAME"];
+                    d.NAT = (string)jUser["NAT"];
+                    d.OA = (int)jUser["OA"];
+                    d.CON = (int)jUser["CON"];
+                    d.TAL = (int)jUser["TAL"];
+                    d.EXP = (int)jUser["EXP"];
+                    d.AGG = (int)jUser["AGG"];
+                    d.TEI = (int)jUser["TEI"];
+                    d.STA = (int)jUser["STA"];
+                    d.CHA = (int)jUser["CHA"];
+                    d.MOT = (int)jUser["MOT"];
+                    d.REP = (int)jUser["REP"];
+                    d.AGE = (int)jUser["AGE"];
+                    d.WEI = (int)jUser["WEI"];
+                    d.RET = (int)jUser["RET"];
+                    d.SAL = (int)jUser["SAL"];
+                    d.FEE = (int)jUser["FEE"];
+                    d.OFF = (int)jUser["OFF"];
+                    d.Last_updated = (DateTime)o1["Last updated"];
+                    d.Ativo = true;
+                    if (add)
+                    {
+                        db.Drivers.AddObject(d);
+                        add = false;
+                    }
                     db.SaveChanges();
                 }
             }
@@ -126,7 +135,7 @@ namespace WindowsFormsApplication1
         {
             using (Entities db = new Entities())
             {
-                db.TD.ToList().ForEach(f => f.Ativo  = false);
+                db.TD.ToList().ForEach(f => f.Ativo = false);
                 db.SaveChanges();
             }
             JObject o1 = JObject.Parse(File.ReadAllText(caminho_arquivo));
@@ -195,5 +204,40 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string LOGIN_URL = "http://gpro.net/gb/gpro.asp";
+            string strUserId = "bage";
+            string strPassword = "102030";
+            string url2 = "http://gpro.net/gb/Qualify.asp";
+
+            Navigate(LOGIN_URL);
+            wb.Document.GetElementById("Text1").InnerText = strUserId;
+            wb.Document.GetElementById("Password2").InnerText = strPassword;
+            wb.Document.GetElementById("Submit2").InvokeMember("click");
+            Navigate(url2);
+
+            string conteudo = wb.DocumentText;
+            int posicao = conteudo.IndexOf("WeatherQ");
+            string cod = conteudo.Substring(posicao + 14).TrimStart();
+            int posicaotemp = conteudo.IndexOf("Temp");
+            string codtemp = conteudo.Substring(posicaotemp + 5).TrimStart();
+            String tempQ1 = codtemp.Split(new string[] { "&deg" }, StringSplitOptions.None)[0];
+            int posicaoumid = codtemp.IndexOf("Humidity");
+            string codumid = codtemp.Substring(posicaoumid + 9).TrimStart();
+            String umidadeQ1 = codumid.Split('%')[0];
+
+
+
+            int posicaoR = conteudo.IndexOf("WeatherR");
+            string codR = conteudo.Substring(posicaoR + 14).TrimStart();
+
+            String tempQ2 = codtemp.Split('%')[0];
+
+        }
+
+
     }
+
+
 }
